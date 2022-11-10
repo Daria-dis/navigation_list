@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lr3_navigation"
+    app:startDestination="@id/navigationHome">
+
+    <fragment
+        android:id="@+id/navigationHome"
+        android:name="com.dasha.ui.main.HomeFragment"
+        android:label="MusicListFragment">
+        <action
+            android:id="@+id/home_to_music_description"
+            app:destination="@id/navigationMusicDescriptionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationMusicDescriptionFragment"
+        android:name="com.dasha.ui.main.MusicDescriptionFragment"
+        android:label="MusicDescriptionFragment">
+        <argument
+            android:name="track"
+            app:argType="com.dasha.model.Music" />
+        <argument
+            android:name="iconUrl"
+            app:argType="string"
+            app:nullable="true"/>
+        <action
+            android:id="@+id/navigationHome"
+            app:destination="@id/navigationHome" />
+    </fragment>
+
+</navigation>
